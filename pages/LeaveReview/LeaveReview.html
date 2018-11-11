@@ -1,0 +1,46 @@
+<ion-header class="appTitle">
+        <ion-navbar>
+            <ion-title> Your review</ion-title>
+        </ion-navbar>
+    </ion-header>
+
+<ion-content>
+        <ion-list>
+            <ion-card>
+                <ion-card-header>
+                    <b class="titleA">
+                        <font size="4">{{item.title}}</font>
+                    </b>
+                    <!--
+                    <p class="price">
+                            {{item.price}}
+                    </p>
+                    -->
+                </ion-card-header>
+
+        <ion-slides> 
+                <img style="width: 100; height:auto" [src]="captureDataUrl" />
+        </ion-slides>
+        <ion-card-content >
+                {{item.description}}
+            </ion-card-content>
+    </ion-card>
+</ion-list>
+
+<ion-textarea placeholder="Your impressions"></ion-textarea>
+
+<ion-grid>
+        <ion-row>
+          <ion-col col-6>
+            <button ion-button full  (click)="close()" color="light">
+                Cancel
+            </button>
+          </ion-col>
+          <ion-col col-6>
+            <button ion-button full (click)="upload()">
+                Send
+            </button>
+          </ion-col>
+        </ion-row>
+</ion-grid>
+</ion-content>

@@ -1,0 +1,56 @@
+page-home {
+
+    .toolbar-background-md{
+        background: #99ccff;
+    }
+
+    
+
+    .search{
+        .scroll-content{
+            background: #99ccff;
+        }
+        top: 56px;
+        height:71.6px;
+        z-index:10;
+
+        .scroll-content{
+            margin-top: 0px !important;
+        }
+
+        .searching{
+            margin-top:10px;
+            margin-bottom: 10px;
+            padding-top: 5px !important;
+            padding-bottom: 5px !important;
+
+        }
+
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .restaurants{
+        background: #cce6ff;
+        
+        .item-inner{
+            border-color: #7e7e7e !important;
+            padding-right: 0px !important;
+            margin-right: 16px !important;
+            margin-left: 16px !important;
+        }
+
+        .item, .item-md{
+
+            .name{
+                font-size: 1.95rem;
+            }
+
+            background: #cce6ff;
+            padding-left: 0px !important;
+            border-bottom-width: 10px !important; 
+        }
+
+        top: 71.6px;
+    }
+}

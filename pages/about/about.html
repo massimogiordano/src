@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      About
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!--ion-card *ngFor="let section of posts; let i = index" -->
+  <ion-card *ngFor="let key of menuKeys">
+      <ion-card-header>
+      <b>{{posts[key].section}}</b>
+      <ion-icon style="float: right" (click)="presentPopover($event, key)" name="more"></ion-icon>
+      <ion-list>
+          <ion-item-sliding  text-wrap *ngFor="let item_key of posts[key].keys; let i = index" >
+            <ion-item>
+              {{posts[key].items[item_key].title}}<i style="float:right">{{posts[key].items[item_key].price}}</i><br>
+              <p>{{posts[key].items[item_key].description}}</p>
+            </ion-item>
+              <ion-item-options>
+                <button ion-button icon-left color="primary" (click)="editItem(key,item_key)"><ion-icon name="ios-create"></ion-icon> Edit</button>
+                <button ion-button color="danger" (click)="removeItem(key,item_key)"> <ion-icon name="ios-trash"></ion-icon> Delete</button>
+              </ion-item-options>
+           </ion-item-sliding>
+      </ion-list>
+    </ion-card-header>
+  </ion-card>
+    
+</ion-content>

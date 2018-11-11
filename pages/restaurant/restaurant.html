@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar style="background:#000000">
+        <ion-title>
+        {{name}}
+        </ion-title>
+        <ion-buttons start>
+        <button ion-button (click)="dismiss()">
+            <span ion-text color="primary" showWhen="ios">Cancel</span>
+            <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+        </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-tabs selectedIndex="1">
+  <ion-tab [root]="tab2Root" tabTitle="Info" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab1Root" [rootParams]="menuJSON" tabTitle="Menu" tabIcon="restaurant"></ion-tab>
+  <ion-tab [root]="tab3Root" [rootParams]="menuJSON" tabTitle="Edit" tabIcon="create"></ion-tab>
+</ion-tabs>

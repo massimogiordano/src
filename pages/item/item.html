@@ -1,0 +1,61 @@
+<!-- <ion-header height="86px">
+    <ion-toolbar>
+        <ion-title>
+        </ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="navBar" overflow-scroll="true">
+    <ion-scroll #scroll scrollX scrollbar-x="false">
+        <ng-container *ngFor="let key of sectionKeys">
+            <div  *ngIf="key != sectionKey" class="scroll-item" (click)="goToOtherSection(key)">
+                <font size="3">{{sectionJSON[key].section}}</font>
+            </div>
+            <div #sectionInUse *ngIf="key == sectionKey" class="scroll-item-active">
+                <font size="4">{{sectionJSON[key].section}}</font>
+            </div>
+        </ng-container>
+    </ion-scroll>
+</ion-content>
+    
+<ion-content class = "itemPage">
+    <ion-list>
+        <ion-card *ngFor="let itemKey of itemKeys">
+            <ion-card-header>
+                <b class="titleA">
+                    <font size="4">{{items[itemKey].title}}</font>
+                </b>
+
+                <p class="price">
+                        {{items[itemKey].price}}
+                </p>
+            </ion-card-header>
+            <ion-slides *ngIf="items[itemKey].photoKeys && items[itemKey].photoKeys.length > 1" pager>
+                <ion-slide *ngFor="let photoKey of items[itemKey].photoKeys">
+                    <img style="width: 100" [src]="items[itemKey].photos[photoKey].image" />
+                </ion-slide>
+                
+                <ion-slide style="height:auto;background-color:rgb(43, 114, 230)">
+                    <button ion-button clear style="height:auto" (click)="capture(itemKey)" >
+                        <ion-icon name="camera" style="font-size: 150px;color:white" ></ion-icon>
+                    </button>
+                    <!-- per aggiungere solo review
+                    <ion-col>
+                        <ion-icon name="create" style="font-size: 150px;color:white" ></ion-icon>
+                    </ion-col>
+                    -->
+                </ion-slide>
+            </ion-slides>
+            <!-- evita che ci siano il pallino nella foto quando c'è ne solo una -->
+            <ion-slides *ngIf="items[itemKey].photoKeys && items[itemKey].photoKeys.length == 1"> 
+                <ion-slide *ngFor="let photoKey of items[itemKey].photoKeys">
+                    <img style="width: 100" [src]="items[itemKey].photos[photoKey].image" />
+                </ion-slide>
+            </ion-slides>
+            <ion-card-content *ngIf="items[itemKey].description">
+                {{items[itemKey].description}}
+            </ion-card-content>
+        </ion-card>
+    </ion-list>
+</ion-content>
+    

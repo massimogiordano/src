@@ -1,0 +1,99 @@
+page-item{
+
+
+    .navBar{
+        top: 56px;
+        height: 53px;
+        background: #cce6ff;
+        z-index:3;
+
+        .scroll-content{
+            margin-bottom:0px !important;
+        }
+
+        ion-scroll[scrollX] {
+            top:10px;
+            height: 35px;
+            white-space: nowrap;
+        }
+
+        .scroll-item {
+            border-radius: 5px;
+            background: #d9d9d9;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top:6px;
+            padding-bottom: 6px;
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+            display: inline-block;
+            color: #737373;
+        }
+        
+        .scroll-item-active{
+            
+            border-radius: 5px;
+            border: 0px solid #000000;
+            background: #bfbfbf;
+            padding-right: 10px;
+            padding-left: 10px;
+            padding-top:6px;
+            padding-bottom: 6px;
+            margin-left: 2.5px;
+            margin-right: 2.5px;
+            display: inline-block;
+            color: #000000;
+        }
+                
+    }
+
+
+    .itemPage{
+
+        top: 98px;
+
+        .scroll-content{
+            margin-bottom: 156px !important;
+        }
+
+        background: #cce6ff;
+
+        ion-card{
+            background-color: white;
+            position: relative;
+            text-align: left;
+        }
+
+        ion-content{
+            background-color: #cce6ff;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+        }
+
+        .titleA{
+            width: 75% !important;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden; 
+            float: 'left'
+        }
+
+        .price{
+            float:right
+        }
+
+        .swiper-pagination {
+            
+            .swiper-pagination-bullet{
+                background:  #273746;
+                opacity: 0.7;
+            }
+            .swiper-pagination-bullet-active {
+                background: #f0f0f5;
+                opacity: 1;
+            }
+        }
+    }
+}

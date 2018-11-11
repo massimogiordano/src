@@ -1,0 +1,34 @@
+<ion-header class="appTitle">
+    <ion-navbar>
+        <ion-title> Enjoy with <b>Gusto</b> </ion-title>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content class="search">
+
+    <ion-searchbar class="searching" (ionInput)="getItems($event)" placeholder="Search for a restaurant"></ion-searchbar>
+
+</ion-content>
+<ion-content class="restaurants">
+    <ion-list>
+        <ion-item *ngFor="let restaurant of restaurantList" (click)="openRestaurant(restaurant.link_menu)">
+        <h2 class="name"> {{ restaurant.name }} </h2>
+        <h3><i> {{ restaurant.address }}</i></h3>
+        </ion-item>
+    </ion-list>
+
+    <!-- <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+
+    <ion-list>
+        <ion-item *ngFor="let item of filteredRestaurants">
+            {{item.name}}
+        </ion-item>
+    </ion-list>
+       -->
+    <!-- <ion-list>
+        <a ion-item *ngFor="let post of posts; let i = index" (click)="openRestaurant(i)">
+            {{post.name}}
+        </a>
+    </ion-list> -->
+      
+</ion-content>
